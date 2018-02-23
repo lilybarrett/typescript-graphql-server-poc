@@ -1,1 +1,1 @@
-# Typescript GraphQL Example
+# Typescript GraphQL Server Example
