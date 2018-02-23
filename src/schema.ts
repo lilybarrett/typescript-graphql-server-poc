@@ -9,6 +9,11 @@ const typeDefs = `
     type Query {
         channels: [Channel]
     }
+    type Mutation {
+        createChannel (
+            name: String!
+        ): Channel
+    }
 `;
 
 const schema = makeExecutableSchema({ typeDefs, resolvers });
