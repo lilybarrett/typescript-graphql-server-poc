@@ -35,4 +35,4 @@ mutation {
 
 Gotchas:
 
-* When importing files in your `schema.graphql` files, make sure A) you use double-quotes and B_ you do _not_ have a semi-colon at the end of the import line. The Regex matcher setting up `graphql-import`'s expectations for imports is quite rigid.
+* When importing files in your `schema.graphql` files, make sure A) you use double-quotes and B) you do _not_ have a semi-colon at the end of the import line. The Regex matcher setting up `graphql-import`'s expectations for imports is quite rigid.
