@@ -1,9 +1,9 @@
-import channels from ".././data/channels";
-import {Channel } from "../../models";
+import { Channel } from "../../models";
 
 export default {
     Query: {
         channels: () => {
+            const channels = Channel.findAll<Channel>();
             return channels;
         },
     },
