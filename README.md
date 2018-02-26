@@ -9,7 +9,7 @@ $ npm i
 $ npm run dev
 ```
 
-2. Navigate to http://localhost:4000/graphiql?query=%7B%0A%20%20channels%20%7B%0A%20%20%20%20id%0A%20%20%20%20name%0A%20%20%7D%0A%7D to view the GraphiQL interface
+2. Navigate to localhost:4000/graphiql to view the GraphiQL interface
 
 3. Test query:
 
