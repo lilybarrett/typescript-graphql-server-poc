@@ -1,5 +1,5 @@
 import channels from ".././data/channels";
-let nextId = 4;
+let nextId = 5;
 
 export default {
         Mutation: {

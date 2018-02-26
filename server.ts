@@ -9,11 +9,11 @@ const app = express();
 app.use(
     "/graphql",
     bodyParser.json(),
-    graphqlExpress((req) => (
+    graphqlExpress(
         {
             schema,
-        }
-    )),
+        },
+    ),
 );
 
 app.use("/graphiql", graphiqlExpress({endpointURL: "/graphql"}));
