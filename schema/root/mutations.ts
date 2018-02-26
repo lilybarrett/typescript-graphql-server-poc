@@ -1,12 +1,10 @@
-import channels from ".././data/channels";
-let nextId = 5;
+import { Channel } from "../../models";
 
 export default {
         Mutation: {
-        createChannel: async ( parent: any, args: any, context: any ) => {
-            const newChannel = { id: nextId++, name: args.name };
-            channels.push(newChannel);
-            return newChannel;
-        },
+            createChannel: async ( parent: any, args: any) => {
+                const newChannel = Channel.create({ name: args.name });
+                return newChannel;
+            },
     },
 };
