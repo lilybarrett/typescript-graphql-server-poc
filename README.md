@@ -9,7 +9,7 @@ $ npm i
 $ npm run dev
 ```
 
-2. Navigate to localhost:4000/graphiql to view the GraphiQL interface
+2. Navigate to `localhost:4000/graphiql` to view the GraphiQL interface
 
 3. Test query:
 
