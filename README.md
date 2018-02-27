@@ -9,6 +9,16 @@ $ npm i
 $ npm run dev
 ```
 
+You will need to create a `.env` file with your Postgres DB_NAME, DB_PASSWORD and DB_USERNAME.
+
+Sample `.env` file content:
+
+```
+DB_NAME=database
+DB_PASSWORD=password
+DB_USERNAME=username
+```
+
 2. Navigate to `localhost:4000/graphiql` to view the GraphiQL interface
 
 3. Test queries:
