@@ -1,4 +1,4 @@
-## Typescript GraphQL Server Example
+# Typescript GraphQL Server Example
 
 Adapted from Part 2 of Jonas Helfer's [Full-stack React & GraphQL Tutorial](https://dev-blog.apollodata.com/react-graphql-tutorial-part-2-server-99d0528c7928). Updated to use TypeScript  & refactored architecture.
 
@@ -11,7 +11,9 @@ $ npm run dev
 
 2. Navigate to `localhost:4000/graphiql` to view the GraphiQL interface
 
-3. Test query:
+3. Test queries:
+
+## For retrieving all channels
 
 ```
 {
@@ -22,7 +24,20 @@ $ npm run dev
 }
 ```
 
-4. Test mutation:
+## For retrieving one channel by its ID
+
+```
+{
+  channel(id: 1) {
+    id
+    name
+  }
+}
+```
+
+4. Test mutations:
+
+## For creating a channel
 
 ```
 mutation {
@@ -30,6 +45,25 @@ mutation {
     id
     name
   }
+}
+```
+
+## For updating a channel
+
+```
+mutation {
+  updateChannelName(id: 1, newName: "Sales"){
+    id
+    name
+  }
+}
+```
+
+## For deleting a channel
+
+```
+mutation {
+  deleteChannel(id: 1)
 }
 ```
 

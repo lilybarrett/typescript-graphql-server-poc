@@ -2,9 +2,13 @@ import { Channel } from "../../models";
 
 export default {
     Query: {
-        channels: () => {
-            const channels = Channel.findAll<Channel>();
+        channels: async () => {
+            const channels = await Channel.findAll();
             return channels;
+        },
+        channel: async (_, { id }) => {
+            const channel = await Channel.findById(id);
+            return channel;
         },
     },
 };
