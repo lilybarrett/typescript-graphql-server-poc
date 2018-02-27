@@ -19,6 +19,6 @@
       "no-var-requires": false,
       "ordered-imports": false,
       "object-literal-sort-keys": false,
-      "no-string-literal": false,
+      "no-string-literal": false
     }
   }

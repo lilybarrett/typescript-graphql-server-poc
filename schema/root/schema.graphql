@@ -2,9 +2,12 @@
 
 type Query {
     channels: [Channel]
+    channel(id: Int): Channel
 }
 
 type Mutation {
     createChannel(name: String): Channel
+    updateChannelName(id: Int, newName: String): Channel
+    deleteChannel(id: Int): Int
 }
 
