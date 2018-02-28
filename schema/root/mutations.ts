@@ -1,10 +1,9 @@
-import { Channel } from "../../models";
+import { Channel, Message } from "../../models";
 
 export default {
         Mutation: {
             createChannel: async ( parent, args ) => {
-                const newChannel = await Channel.create({ name: args.name });
-                return newChannel;
+                return await Channel.create({ name: args.name });
             },
             updateChannelName: async ( parent, args ) => {
                 const channelToUpdate = await Channel.findById(args.id);
@@ -14,6 +13,18 @@ export default {
             deleteChannel: async ( parent, args ) => {
                 Channel.destroy( { where: { id: args.id } } );
                 return args.id;
+            },
+            createChannelMessage: async ( parent, args ) => {
+                // console.log("Hello World");
+                const channelMessage = await Message.create({
+                    text: args.text,
+                    messageUser: args.messageUser,
+                    messageChannelId: args.messageChannelId,
+                });
+                const channelToUpdate = await Channel.findById(args.messageChannelId);
+                // tslint:disable-next-line:max-line-length
+                channelToUpdate.update( { channelMessages: { ...channelToUpdate.channelMessages, ...channelMessage }}, { where: { id: args.messageChannelId }});
+                return channelToUpdate;
             },
     },
 };
