@@ -15,16 +15,16 @@ export default {
                 return args.id;
             },
             createChannelMessage: async ( parent, args ) => {
-                // console.log("Hello World");
                 const channelMessage = await Message.create({
                     text: args.text,
                     messageUser: args.messageUser,
                     messageChannelId: args.messageChannelId,
                 });
-                const channelToUpdate = await Channel.findById(args.messageChannelId);
+                return channelMessage;
+                // const channelToUpdate = await Channel.findById(args.messageChannelId);
                 // tslint:disable-next-line:max-line-length
-                channelToUpdate.update( { channelMessages: { ...channelToUpdate.channelMessages, ...channelMessage }}, { where: { id: args.messageChannelId }});
-                return channelToUpdate;
+                // channelToUpdate.update( { channelMessages: { ...channelToUpdate.channelMessages, ...channelMessage }}, { where: { id: args.messageChannelId }});
+                // return channelToUpdate;
             },
     },
 };

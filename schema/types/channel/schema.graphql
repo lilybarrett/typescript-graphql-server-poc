@@ -1,7 +1,4 @@
-# import Message from "../types/message/schema.graphql"
-
 type Channel {
     id: Int
     name: String
-    channelMessages: Message[]
 }
