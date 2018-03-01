@@ -1,0 +1,6 @@
+type Message {
+    id: ID!
+    text: String
+    messageUser: String
+    messageChannelId: Int
+}

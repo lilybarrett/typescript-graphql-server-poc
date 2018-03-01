@@ -1,4 +1,5 @@
 # import Channel from "../types/channel/schema.graphql"
+# import Message from "../types/message/schema.graphql"
 
 type Query {
     channels: [Channel]
@@ -9,5 +10,8 @@ type Mutation {
     createChannel(name: String): Channel
     updateChannelName(id: Int, newName: String): Channel
     deleteChannel(id: Int): Int
+    createChannelMessage(text: String, messageUser: String, messageChannelId: Int): Message
+    updateChannelMessage(id: Int, newText: String): Message
+    deleteChannelMessage(id: Int): Int
 }
 

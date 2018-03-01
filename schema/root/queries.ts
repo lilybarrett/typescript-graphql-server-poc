@@ -1,14 +1,16 @@
-import { Channel } from "../../models";
+import { Channel, Message } from "../../models";
 
 export default {
     Query: {
         channels: async () => {
-            const channels = await Channel.findAll();
-            return channels;
+            return await Channel.findAll({
+                include: [ Message ],
+            });
         },
         channel: async (_, { id }) => {
-            const channel = await Channel.findById(id);
-            return channel;
+            return await Channel.findById(id,
+                {  include: [ Message ],
+            });
         },
     },
 };
