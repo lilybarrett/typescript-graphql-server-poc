@@ -8,7 +8,9 @@ export default {
             });
         },
         channel: async (_, { id }) => {
-            return await Channel.findById(id);
+            return await Channel.findById(id,
+                {  include: [ Message ],
+            });
         },
     },
 };

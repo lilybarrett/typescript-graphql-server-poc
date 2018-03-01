@@ -11,5 +11,7 @@ type Mutation {
     updateChannelName(id: Int, newName: String): Channel
     deleteChannel(id: Int): Int
     createChannelMessage(text: String, messageUser: String, messageChannelId: Int): Message
+    updateChannelMessage(id: Int, newText: String): Message
+    deleteChannelMessage(id: Int): Int
 }
 

@@ -38,6 +38,7 @@ DB_USERNAME=username
   channels {
     id
     name
+    channelMessages
   }
 }
 ```
@@ -49,6 +50,7 @@ DB_USERNAME=username
   channel(id: 1) {
     id
     name
+    channelMessages
   }
 }
 ```
@@ -62,6 +64,18 @@ mutation {
   createChannel(name: "Dev"){
     id
     name
+  }
+}
+```
+
+## For creating a message for a channel (Note: The channel whose ID you provide must already exist)
+
+```
+mutation {
+  createChannelMessage(text: "blahblah", messageUser: "Lily", messageChannelId: 1){
+    messageChannelId
+    text
+    messageUser
   }
 }
 ```
@@ -82,6 +96,27 @@ mutation {
 ```
 mutation {
   deleteChannel(id: 1)
+}
+// associated resources will automatically be deleted
+```
+
+## For updating a message
+
+```
+mutation {
+  updateChannelMessage(id: 1, newText: "dklasjfdjfl") {
+    messageChannelId
+    text
+    messageUser
+  }
+}
+```
+
+## For deleting a message
+
+```
+mutation {
+  deleteChannelMessage(id: 1)
 }
 ```
 
