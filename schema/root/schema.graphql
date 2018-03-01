@@ -3,7 +3,7 @@
 
 type Query {
     channels: [Channel]
-    channel(id: Int): Channel
+    channel(id: ID!): Channel
 }
 
 type Mutation {
